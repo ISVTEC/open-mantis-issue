@@ -26,3 +26,6 @@ wsdl = http://MANTIS_URL/api/soap/mantisconnect.php?wsdl
 username = my_user
 password = my_password
 ```
+# Installation
+
+apt-get install python-soappy
