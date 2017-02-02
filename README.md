@@ -2,8 +2,9 @@
 Open Mantis issue from CLI
 
 ```
-./open-mantis-issue --help
-usage: open-mantis-issue [-h] --summary SUMMARY --description DESCRIPTION --project-id PROJECT_ID [--configuration-file CONFIGURATION_FILE]
+usage: open-mantis-issue [-h] --summary SUMMARY --description DESCRIPTION
+                         --project-id PROJECT_ID [--handler-id HANDLER_ID]
+                         [--configuration-file CONFIGURATION_FILE]
 
 Opens Mantis issues
 
@@ -14,6 +15,8 @@ optional arguments:
                         Issue description
   --project-id PROJECT_ID
                         Project ID
+  --handler-id HANDLER_ID
+                        Handler ID
   --configuration-file CONFIGURATION_FILE
                         INI file containing Mantis parameters
 ```
