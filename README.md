@@ -28,4 +28,6 @@ password = my_password
 ```
 # Installation
 
+```
 apt-get install python-soappy
+```
