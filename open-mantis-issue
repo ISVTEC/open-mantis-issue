@@ -44,7 +44,7 @@ password = config.get('Mantis', 'password')
 issue = {
     'summary': args.summary,
     'description': args.description,
-    'project': 
+    'project':
     {
         'id': args.project_id,
     },
