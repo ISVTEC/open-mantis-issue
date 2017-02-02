@@ -26,6 +26,7 @@ parser = argparse.ArgumentParser(description='Opens Mantis issues')
 parser.add_argument('--summary',     help='Issue summary', required=True)
 parser.add_argument('--description', help='Issue description', required=True)
 parser.add_argument('--project-id',  help='Project ID', required=True)
+parser.add_argument('--handler-id',  help='Handler ID')
 parser.add_argument('--configuration-file',
     help='INI file containing Mantis parameters',
     default='/etc/mantis.ini'
@@ -49,6 +50,10 @@ issue = {
         'id': args.project_id,
     },
 }
+
+# Define issue 'handler' if needed
+if 'handler_id' in args:
+	issue['handler'] = {'id': args.handler_id };
 
 mantis = WSDL.Proxy(wsdl)
 
