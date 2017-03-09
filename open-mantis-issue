@@ -27,6 +27,10 @@ parser.add_argument('--summary',     help='Issue summary', required=True)
 parser.add_argument('--description', help='Issue description', required=True)
 parser.add_argument('--project-id',  help='Project ID', required=True)
 parser.add_argument('--handler-id',  help='Handler ID')
+parser.add_argument('--handler-name',  help='Handler name')
+parser.add_argument('--reporter-id',  help='Reporter ID')
+parser.add_argument('--reporter-name',  help='Reporter name')
+parser.add_argument('--status-id',  help='Status ID')
 parser.add_argument('--configuration-file',
     help='INI file containing Mantis parameters',
     default='/etc/mantis.ini'
@@ -51,9 +55,25 @@ issue = {
     },
 }
 
-# Define issue 'handler' if needed
+# Define issue 'handler id' if needed
 if 'handler_id' in args:
 	issue['handler'] = {'id': args.handler_id };
+
+# Define issue 'handler name' if needed
+if 'handler_name' in args:
+	issue['handler'] = {'name': args.handler_name };
+
+# define issue 'status id' if needed
+if 'status_id' in args:
+	issue['status'] = {'id': args.status_id };
+
+# define issue 'reporter id' if needed
+if 'reporter_id' in args:
+	issue['reporter'] = {'id': args.reporter_id };
+
+# define issue 'reporter name' if needed
+if 'reporter_name' in args:
+	issue['reporter'] = {'name': args.reporter_name };
 
 mantis = WSDL.Proxy(wsdl)
 
